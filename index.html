@@ -8,7 +8,7 @@
 
     <!--<span>Ime:</span>> <input id="ime" type="text"><br><br>
     <span>Prezime:</span> <input id="prezime" type="text"><br><br>-->
-    <span>Indeks:</span> <input id="indeks" type="text"><br><br>
+    <span>Indeks:</span> <input id="indeks" type="text"><span id="smallError">Vnesi 6 cifren broj</span><br><br>
     <input type="button" value="Log In" onclick="logIn()">
 
     <script type="text/javascript">
@@ -26,9 +26,25 @@
         //proveri dali se validni
         var validLogin=["156003", "156008","123456"];
         var indeksRef = document.getElementById("indeks");
-        
+        var errorRef = document.getElementById("smallError");
 
         function logIn(){
+
+            //proveri dali e 6 cifren brojot
+
+            //x>99999 x<1000000
+            var x = parseInt(indeksRef.value);
+            
+            if(x>99999 && x<1000000){//proverka za 6 cifren broj
+                console.log("Vnesen e 6 cifren broj "+ x);
+            }else{
+                errorRef.style.color = "red";
+                return;
+            }
+                        
+            
+            //odi ponataka 
+
             var  flag=false;
 
             console.log(indeksRef.value);
