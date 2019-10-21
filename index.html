@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+    <!--<span>Ime:</span>> <input id="ime" type="text"><br><br>
+    <span>Prezime:</span> <input id="prezime" type="text"><br><br>-->
+    <span>Indeks:</span> <input id="indeks" type="text"><br><br>
+    <input type="button" value="Log In" onclick="logIn()">
+
+    <script type="text/javascript">
+        var text;
+        text = "Hello World!";
+        var text2 = 5;        
+        var text3 = text + text2;
+
+        /*console.log(text3);
+        console.log(typeof(text3));
+        console.log(typeof(text2));            
+
+        document.write(text);*/
+
+        //proveri dali se validni
+        var validLogin=["156003", "156008","123456"];
+        var indeksRef = document.getElementById("indeks");
+        
+
+        function logIn(){
+            var  flag=false;
+
+            console.log(indeksRef.value);
+
+            for(var i=0; i<validLogin.length; i+=1){
+                if(indeksRef.value == validLogin[i]){
+                    flag=true;
+                    console.log(flag);                                        
+                    break;
+                }
+            }
+
+            if(flag==true){
+                alert("Uspesno logiran student");
+            }else if(flag==false){
+                alert("Greska");
+            }
+        }
+
+
+    </script>
+
+</body>
+</html>
